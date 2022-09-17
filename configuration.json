@@ -1,0 +1,54 @@
+{
+  "SubReddits": [
+    {
+      "Name": "ExplainLikeImFive",
+      "Count": 200
+    },
+    {
+      "Name": "FoodForThought",
+      "Count": 200
+    },
+    {
+      "Name": "ChangeMyView",
+      "Count": 200
+    },
+    {
+      "Name": "TodayILearned",
+      "Count": 200
+    }
+  ],
+  "Topics": [
+    {
+      "Name": "Bidan wins election",
+      "Count": 250
+    },
+    {
+      "Name": "Climate change",
+      "Count": 250
+    },
+    {
+      "Name": "Covid vaccine",
+      "Count": 250
+    },
+    {
+      "Name": "Covid vaccination",
+      "Count": 250
+    },
+    {
+      "Name": "Iphone 14",
+      "Count": 250
+    },
+    {
+      "Name": "Education department",
+      "Count": 250
+    },
+    {
+      "Name": "5G network",
+      "Count": 250
+    },
+    {
+      "Name": "Bitcoin mining",
+      "Count": 250
+    }
+  ]
+}
