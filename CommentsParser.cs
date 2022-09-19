@@ -14,17 +14,22 @@ namespace RedditDataScraping
         public const string BaseUrl = @"https://api.pushshift.io/reddit/search/comment/?q=*";
         public const string RequiredFields = "id,subreddit,permalink,body,author,parent_id,created_utc";
 
-        public static void GetComments(string id, string parentBody, List<Comment> result, int size = 30)
+        public static void GetComments(string id, string parentBody, List<Comment> commentList, int size = 30)
         {
             var curURL = BaseUrl.AddQueryParameter("link_id", id);
             curURL = curURL.AddQueryParameter("fields", RequiredFields);
-            curURL = curURL.AddSizeQueryParameter(size.ToString());
+            //Get 5 times the size so that filtering will not reduce the output
+            curURL = curURL.AddSizeQueryParameter((size * 5).ToString());
             var responseStr = GetRequest(curURL);
             var data = JsonConvert.DeserializeObject<RedditResponse<Comment>>(responseStr).Data;
             var res = data.Where(x => IsValid(x.Body)).ToList();
+            //Limit comments to size
+            res = res.GetRange(0, res.Count < size ? res.Count : size);
+            //Remove duplicates.
+            res = res.Where(x => !commentList.Any(y => y.Id == x.Id)).ToList();
             Logger.Log($"Extracted {res.Count} comments...");
             res.ForEach(x => { x.ParentBody = parentBody; });
-            result.AddRange(res);
+            commentList.AddRange(res);
             Thread.Sleep(1000);
         }
 
@@ -34,7 +39,7 @@ namespace RedditDataScraping
                 return false;
             body = body.ToLower().Trim();
             var removedMessage = "your submission has been removed for the following reason";
-            return !body.Equals("[removed]") && !body.Equals("[deleted]") && !body.Contains(removedMessage);
+            return !string.IsNullOrEmpty(body) && !body.Equals("[removed]") && !body.Equals("[deleted]") && !body.Contains(removedMessage);
 
         }
 

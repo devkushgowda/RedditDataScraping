@@ -1,53 +1,57 @@
 {
   "SubReddits": [
     {
-      "Name": "ExplainLikeImFive",
-      "Count": 200
+      "Value": "ExplainLikeImFive",
+      "Topic": "Subreddit",
+      "Count": 250
     },
     {
-      "Name": "FoodForThought",
-      "Count": 200
+      "Value": "FoodForThought",
+      "Topic": "Subreddit",
+      "Count": 250,
+      "CanBeEmpty": true
     },
     {
-      "Name": "ChangeMyView",
-      "Count": 200
+      "Value": "ChangeMyView",
+      "Topic": "Subreddit",
+      "Count": 250
     },
     {
-      "Name": "TodayILearned",
-      "Count": 200
+      "Value": "TodayILearned",
+      "Topic": "Subreddit",
+      "Count": 250,
+      "CanBeEmpty": true
     }
   ],
   "Topics": [
     {
-      "Name": "Bidan wins election",
+      "Value": "Congress",
+      "Topic": "Politics",
+      "Count": 400
+    },
+    {
+      "Value": "Climate change",
+      "Topic": "Environment",
+      "Count": 400
+    },
+    {
+      "Value": "Covid vaccine",
+      "Topic": "Healthcare",
+      "Count": 400
+    },
+    {
+      "Value": "Education",
+      "Topic": "Education",
+      "Count": 400
+    },
+    {
+      "Value": "Bitcoin mining",
+      "Topic": "Technology",
       "Count": 250
     },
     {
-      "Name": "Climate change",
-      "Count": 250
-    },
-    {
-      "Name": "Covid vaccine",
-      "Count": 250
-    },
-    {
-      "Name": "Covid vaccination",
-      "Count": 250
-    },
-    {
-      "Name": "Iphone 14",
-      "Count": 250
-    },
-    {
-      "Name": "Education department",
-      "Count": 250
-    },
-    {
-      "Name": "5G network",
-      "Count": 250
-    },
-    {
-      "Name": "Bitcoin mining",
+      "Value": "Cloud computing",
+      "Topic": "Technology",
       "Count": 250
     }
   ]
